@@ -1,8 +1,8 @@
 # vim:fileencoding=utf-8:noet
 
-from setuptools import setup
+import setuptools
 
-setup(
+setuptools.setup(
     name='powerline-treesitter',
     description='A Powerline segment for showing treesitter status.',
     version='0.1.0',
