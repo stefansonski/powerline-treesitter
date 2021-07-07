@@ -13,9 +13,14 @@ def treesitter(pl):
     Highlight groups used: ``treesitter_identifier`` or ``file_name``.
     '''
     winwidth = vim.eval('nvim_win_get_width(0)')
-    treesitter_status = vim.eval('nvim_treesitter#statusline(' + winwidth + ')')
+    treesitter_status = vim.eval('nvim_treesitter#statusline(' +
+                                 winwidth + ')')
     pl.debug('Current nvim_treesitter#statusline(): %s.' % treesitter_status)
-    return [{
-        'contents': treesitter_status,
-        'highlight_groups': ['treesitter_status', 'file_name']
-    }]
+
+    if treesitter_status is None or not treesitter_status:
+        return None
+    else:
+        return [{
+            'contents': treesitter_status,
+            'highlight_groups': ['treesitter_status', 'file_name']
+        }]
