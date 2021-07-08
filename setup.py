@@ -5,7 +5,7 @@ import setuptools
 setuptools.setup(
     name='powerline-treesitter',
     description='A Powerline segment for showing treesitter status.',
-    version='0.1.1',
+    version='0.2.0',
     keywords='powerline treesitter nvim neovim prompt',
     author='Stefan Sonski',
     author_email='s.sonski@gmail.com',
